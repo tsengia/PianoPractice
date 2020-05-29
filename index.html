@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<title>Piano Practice</title>
+
+	<link rel="stylesheet" type="text/css" href="piano-practice.css" />
+	<script type="text/javascript" src="libs/vue.js" ></script>
+	<script type="text/javascript" src="libs/abcjs_basic_6.0.0-beta.9-min.js" ></script>
+
+	<script type="text/javascript" src="libs/midi/Base64.js" ></script>
+	<script type="text/javascript" src="libs/midi/Base64binary.js" ></script>
+	<script type="text/javascript" src="libs/midi/WebAudioAPI.js" ></script>
+
+	<script type="text/javascript" src="libs/midi/audioDetect.js" ></script>
+	<script type="text/javascript" src="libs/midi/loader.js" ></script>
+	<script type="text/javascript" src="libs/midi/player.js" ></script>
+	<script type="text/javascript" src="libs/midi/gm.js" ></script>
+	<script type="text/javascript" src="libs/midi/plugin.audiotag.js" ></script>
+	<script type="text/javascript" src="libs/midi/plugin.webaudio.js" ></script>
+
+	<script type="text/javascript" src="libs/midi/dom_request_xhr.js" ></script>
+	<script type="text/javascript" src="libs/midi/dom_request_script.js" ></script>
+
+	<script type="text/javascript" src="js/note.js" ></script>
+
+</head>
+<body>
+
+<div id="content" >
+	<span id="instructions" >{{ instructions }}</span>
+	<div id="music-page" ></div>
+	<span id="hint-area" v-if="showHint" >{{ hint }}</span>
+</div>
+
+
+<script type="text/javascript" src="js/keymap.js" ></script>
+<script type="text/javascript" src="js/practice.js" ></script>
+</body>
+</html>
