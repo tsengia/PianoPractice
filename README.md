@@ -16,3 +16,11 @@ A planned TODO list of features and modes:
 - Configurable keymapping
 - Controllable Volume
 
+## Dependencies
+The Piano Practice webapp would not be possible with the great contribution of the following open source libraries and resources:
+- [MIDI.js](https://github.com/mudcube/MIDI.js)
+- [midi-js-soundfonts](https://github.com/gleitz/midi-js-soundfonts)
+- [ABCJS](https://github.com/paulrosen/abcjs)
+- [Vue2](https://github.com/vuejs/vue)
+
+All libaries and resources noted above are redistributed in this repository with appropriate licensing files present.
