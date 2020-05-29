@@ -1,4 +1,4 @@
-# Piano Practice
+# :notes: :musical_keyboard: Piano Practice
 A small set of web apps for learning to play/practicing the piano.
 
 This collection of web apps is still growing as I learn to play. Expect frequent updates and more ways to practice!
