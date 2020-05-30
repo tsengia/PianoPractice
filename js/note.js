@@ -49,7 +49,7 @@ class Note extends Beat {
 
 	toABC(origin_octave=4) {
 		var i = this.octave;
-		var s = this.note.toLowerCase();
+		var s = this.note.toUpperCase();
 		while(i > origin_octave) {
 			s += "'";
 			i--;
