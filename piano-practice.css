@@ -6,14 +6,34 @@ html, body {
 	height: 97%;
 }
 
+#app {
+	width: 100%;
+	height: 100%;
+}
+
+#top-bar {
+	width: 100%;
+	height: 5%;
+	background-color: #CCF;
+}
+
+#bottom-bar {
+	width: 100%;
+	height: 5%;
+	background-color: #FFC;
+}
+
+#content-container {
+	width: 95%;
+	height: 95%;
+	margin-left: 5%;
+	background-color: #DDD;
+}
+
 #content {
+	width: 95%;
+	height: 100%;
 	background-color: #FFF;
-	width: 80%;
-	height: 80%;
-	padding: 5%;
-	position: absolute;
-	top: 0;
-	left: 5%;
 }
 
 #instructions {
@@ -28,7 +48,7 @@ html, body {
 	text-align: center;
 }
 
-#hint-area {
+#hint {
 	display: block;
 	font-family: sans-serif;
 	text-align: center;
@@ -45,5 +65,50 @@ html, body {
 }
 
 #controls {
+	text-align: center;
+}
+
+#notes-on {
+    text-align: center;
+    font-size: 25px;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.keymap-window {
+	position: absolute;
+	left: 30%;
+	top: 10%;
+	width: 30%;
+	background-color: #FFF;
+	border: 1px solid #DDD;
+	z-index: 2;
+	overflow-y: auto;
+	overflow-x: hidden;
+	border: 2px solid #000;
+}
+
+.keymap-window .window-content {
+	column-count: 2;
+}
+
+.keymap-window .title-bar {
+	background-color: #FDD;
+	padding-bottom: 2px;
+	border-bottom: 1px solid #333;
+}
+
+.keymap-window .title-bar button {
+	background-color: #D00;
+	color: #FFF;
+	font-family: sans-serif;
+	font-weight: bold;
+	margin-right: 5px;
+}
+
+.keymap-setting {
+	font-family: sans-serif;
+	padding: 5px;
+	background-color: #DDD;
 	text-align: center;
 }
