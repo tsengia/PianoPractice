@@ -27,7 +27,12 @@ var app = new Vue({
 });
 app.currentNote = new Note("C", 4, "2", false);
 
-window.onload = function () {
+window.onload = function () {	
+	keysDown = {};
+		Object.keys(keymap).forEach(function(k,j) {
+		keysDown[k] = false;
+	});
+
 	app.hint = "Loading...";
 	app.showHint = true;
 	MIDI.loadPlugin({
@@ -66,11 +71,6 @@ function randomNote(range="") {
 	console.log("new one");
 	return note;
 }
-
-keysDown = {};
-Object.keys(keymap).forEach(function(k,j) {
-	keysDown[k] = false;
-});
 
 window.onkeydown = function(e) {
 	e.preventDefault();
