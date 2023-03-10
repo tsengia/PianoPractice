@@ -25,7 +25,7 @@ var app = new Vue({
 	    { name: "C4", id:1 }, { name: "B3-D4", id: 2 }, { name: "A3-E4", id: 3 }, { name: "G3-F4", id: 4 }
 	    ],
 	    selectedNoteRange: 0,
-		selectedMode: "0",
+		selectedMode: "1",
 		songs: [ { name: "Happy Birthday", id:0 } ],
 		selectedSong: "0",
 		scales: [ 
@@ -219,7 +219,9 @@ var app = new Vue({
 
 		this.keymap.apply();
 
-		ABCJS.renderAbc("music-page", this.abcString, { scale: this.abcScale });
+		this.displayRandomNote();
+
+		//ABCJS.renderAbc("music-page", this.abcString, { scale: this.abcScale });
 
 		this.hint = "Press Load Soundfont.";
 		this.showHint = true;
