@@ -39,7 +39,7 @@ if (typeof MIDI === 'undefined') MIDI = {};
 
 	root.audioDetect = function(onsuccess) {
 		/// detect jazz-midi plugin
-		if (navigator.requestMIDIAccess) {
+		/*if (navigator.requestMIDIAccess) {
 			var isNative = Function.prototype.toString.call(navigator.requestMIDIAccess).indexOf('[native code]');
 			if (isNative) { // has native midiapi support
 				supports['webmidi'] = true;
@@ -51,7 +51,7 @@ if (typeof MIDI === 'undefined') MIDI = {};
 					}
 				}
 			}
-		}
+		}*/
 
 		/// check whether <audio> tag is supported
 		if (typeof(Audio) === 'undefined') {
