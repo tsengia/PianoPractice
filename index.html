@@ -76,7 +76,9 @@ Toggle Show Notes
 </div></div>
 
 <div id="bottom-bar" >
-	<span v-if="showHint" id="hint" >{{ hint }}</span>
+	<span v-if="showHint" id="hint" >{{ hint }}</span><button v-if="!loaded" v-on:click="loadSoundFont()" type="button" >
+		Load Soundfont
+		</button>
 	<!-- TODO: Help messages, feedback, play/pause play along control -->
 </div>
 
