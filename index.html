@@ -7,6 +7,7 @@
 	<title>Piano Practice</title>
 
 	<link rel="stylesheet" type="text/css" href="piano-practice.css" />
+	<script type="text/javascript" src="libs/axios.min.js"></script>
 	<script type="text/javascript" src="libs/vue/vue.js" ></script>
 	<script type="text/javascript" src="libs/abcjs/abcjs_basic_6.0.0-beta.9-min.js" ></script>
 
@@ -18,6 +19,7 @@
 	<script type="text/javascript" src="libs/midi/loader.js" ></script>
 	<script type="text/javascript" src="libs/midi/player.js" ></script>
 	<script type="text/javascript" src="libs/midi/gm.js" ></script>
+	
 	<script type="text/javascript" src="libs/midi/plugin.audiotag.js" ></script>
 	<script type="text/javascript" src="libs/midi/plugin.webaudio.js" ></script>
 
@@ -25,18 +27,61 @@
 	<script type="text/javascript" src="libs/midi/dom_request_script.js" ></script>
 
 	<script type="text/javascript" src="js/note.js" ></script>
-
 </head>
 <body>
+<div id="app" >
 
-<div id="content" >
-	<span id="instructions" >{{ instructions }}</span>
-	<div id="music-page" ></div>
-	<span id="hint-area" v-if="showHint" >{{ hint }}</span>
+<div id="top-bar" >
+<!-- To put here: Navigation between songs, sound settings, keymap settings -->
+
+<select v-model="selectedMode" >
+	<option v-for="m in modes" v-bind:value="m.id" >
+		{{ m.name }}
+	</option>
+</select>
+
+<select v-if="showSongSelection" v-model="selectedSong" >
+	<option v-for="s in songs" v-bind:value="s.id" >
+		{{ s.name }}
+	</option>
+</select>
+
+<select v-if="selectedMode == 1" v-model="selectedNoteRange" >
+	<option v-for="s in singleNoteRanges" v-bind:value="s.id" >
+		{{ s.name }}
+	</option>
+</select>
+
+<select v-if="selectedMode == 3" v-model="selectedScale" >
+	<option v-for="s in scales" v-bind:value="s.id" >
+		{{ s.name }}
+	</option>
+</select>
+
+<button v-if="!loaded" v-on:click="loadSoundFont()" type="button" >
+Load Soundfont
+</button>
+
+<button type="button" v-on:click="showNotesOn = !showNotesOn" >
+Toggle Show Notes
+</button>
+
+<keymap-window v-bind:keymap="this.keymap" />
+
 </div>
 
+<div id="content-container" ><div id="content" >
+	<div id="music-page" ></div>
+	<div id="notes-on" v-bind:class="{ red: showFail, green: showSuccess  }" v-if="showNotesOn && notesOn.length > 0" >{{ notesOn }}</div>
+</div></div>
 
+<div id="bottom-bar" >
+	<span v-if="showHint" id="hint" >{{ hint }}</span>
+	<!-- TODO: Help messages, feedback, play/pause play along control -->
+</div>
+
+</div>
 <script type="text/javascript" src="js/keymap.js" ></script>
-<script type="text/javascript" src="js/practice.js" ></script>
+<script type="text/javascript" src="js/main_page.js" ></script>
 </body>
 </html>
