@@ -1,7 +1,5 @@
 # :notes: :musical_keyboard: Piano Practice
-A small set of web apps for learning to play/practicing the piano.
-
-This collection of web apps is still growing as I learn to play. Expect frequent updates and more ways to practice!
+A small virtual piano webapp.  
 
 ## Current Demos
 Below is a list of completed modes for learning to play:
@@ -23,4 +21,4 @@ The Piano Practice webapp would not be possible with the great contribution of t
 - [ABCJS](https://github.com/paulrosen/abcjs)
 - [Vue2](https://github.com/vuejs/vue)
 
-All libaries and resources noted above are redistributed in this repository with appropriate licensing files present.
+All libraries and resources noted above are redistributed in this repository with appropriate licensing files present.
