@@ -221,8 +221,6 @@ var app = new Vue({
 
 		this.displayRandomNote();
 
-		//ABCJS.renderAbc("music-page", this.abcString, { scale: this.abcScale });
-
 		this.hint = "Press Load Soundfont.";
 		this.showHint = true;
 	}
