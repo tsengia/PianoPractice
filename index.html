@@ -75,8 +75,8 @@
 	<div id="notes-on" v-bind:class="{ red: showFail, green: showSuccess  }" v-if="showNotesOn && notesOn.length > 0" >{{ notesOn }}</div>
 </div></div>
 
-<div id="help-dialog" >
-	<div v-if="showHint" id="hint" >
+<div v-if="showHint" id="help-dialog" >
+	<div id="hint" >
 		{{ hint }}
 	</div>
 	<br />
