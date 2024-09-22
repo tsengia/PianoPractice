@@ -32,41 +32,41 @@
 <div id="app" >
 
 <div id="top-bar" >
-<!-- To put here: Navigation between songs, sound settings, keymap settings -->
+	<select v-model="selectedMode" >
+		<option v-for="m in modes" v-bind:value="m.id" >
+			{{ m.name }}
+		</option>
+	</select>
 
-<select v-model="selectedMode" >
-	<option v-for="m in modes" v-bind:value="m.id" >
-		{{ m.name }}
-	</option>
-</select>
+	<select v-if="showSongSelection" v-model="selectedSong" >
+		<option v-for="s in songs" v-bind:value="s.id" >
+			{{ s.name }}
+		</option>
+	</select>
 
-<select v-if="showSongSelection" v-model="selectedSong" >
-	<option v-for="s in songs" v-bind:value="s.id" >
-		{{ s.name }}
-	</option>
-</select>
+	<select v-if="selectedMode == 1" v-model="selectedNoteRange" >
+		<option v-for="s in singleNoteRanges" v-bind:value="s.id" >
+			{{ s.name }}
+		</option>
+	</select>
 
-<select v-if="selectedMode == 1" v-model="selectedNoteRange" >
-	<option v-for="s in singleNoteRanges" v-bind:value="s.id" >
-		{{ s.name }}
-	</option>
-</select>
+	<select v-if="selectedMode == 3" v-model="selectedScale" >
+		<option v-for="s in scales" v-bind:value="s.id" >
+			{{ s.name }}
+		</option>
+	</select>
 
-<select v-if="selectedMode == 3" v-model="selectedScale" >
-	<option v-for="s in scales" v-bind:value="s.id" >
-		{{ s.name }}
-	</option>
-</select>
 
-<button v-if="!loaded" v-on:click="loadSoundFont()" type="button" >
-Load Soundfont
-</button>
+	<button type="button" class="float-right" v-on:click="showNotesOn = !showNotesOn" >
+		Toggle Show Notes
+	</button>
 
-<button type="button" v-on:click="showNotesOn = !showNotesOn" >
-Toggle Show Notes
-</button>
+	<keymap-window class="float-right" v-bind:keymap="this.keymap" />
 
-<keymap-window v-bind:keymap="this.keymap" />
+	
+	<button v-if="!loaded" class="float-right"  v-on:click="loadSoundFont()" type="button" >
+		Load Soundfont
+	</button>
 
 </div>
 
@@ -75,9 +75,12 @@ Toggle Show Notes
 	<div id="notes-on" v-bind:class="{ red: showFail, green: showSuccess  }" v-if="showNotesOn && notesOn.length > 0" >{{ notesOn }}</div>
 </div></div>
 
-<div id="bottom-bar" >
-	<span v-if="showHint" id="hint" >{{ hint }}<button v-if="!loaded" v-on:click="loadSoundFont()" type="button" >Load Soundfont</button></span>
-	<!-- TODO: Help messages, feedback, play/pause play along control -->
+<div id="help-dialog" >
+	<div v-if="showHint" id="hint" >
+		{{ hint }}
+	</div>
+	<br />
+	<button v-if="!loaded" v-on:click="loadSoundFont()" type="button" >Load Soundfont</button>
 </div>
 
 </div>

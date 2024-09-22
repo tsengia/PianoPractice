@@ -104,10 +104,10 @@ var app = new Vue({
             }
         },
 	    loadSoundFont: function () {
-	        this.hint = "Loading...";
+	        this.hint = "Loading, this may take up to a minute...";
 	        MIDI.loadPlugin({
 			soundfontUrl: "./soundfonts/",
-			api:"flash",
+			api: "flash",
 			instrument: "acoustic_grand_piano",
 			onerror: function() {
 				console.log("Failed to load soundfont.");
@@ -119,6 +119,7 @@ var app = new Vue({
 				app.showHint = false;
 				app.loaded = true;
 				console.log("Soundfont loaded.");
+				document.getElementById("content-container").style.opacity = 1;
 			}
 		  });
 	    },
@@ -221,7 +222,9 @@ var app = new Vue({
 
 		this.displayRandomNote();
 
-		this.hint = "Press Load Soundfont.";
+		this.hint = "Press Load Soundfont to Begin:";
 		this.showHint = true;
+
+		document.getElementById("content-container").style.opacity="0.3";
 	}
 });
