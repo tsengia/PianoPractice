@@ -187,7 +187,7 @@ class NoteRange {
     }
     
     getRandomNote() {
-        var distance = 8 * (this.max.octave - this.min.octave);
+        var distance = 7 * (this.max.octave - this.min.octave);
         distance += this._notesList[this.max.note] - this._notesList[this.min.note];
         distance = Math.floor(Math.random()*distance);
         return this.min.getNoteAtDistance(distance);
