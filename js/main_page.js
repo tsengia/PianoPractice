@@ -18,9 +18,9 @@ var app = new Vue({
 		showNotesOn: true,
 		contentText: "",
 		modes: [ { name: "Free Play", id: 0},
-			 { name: "Single Note", id: 1},
-			 { name: "Song", id: 2},
-			 { name: "Scales", id: 3}],
+			 { name: "Single Note", id: 1}],
+			 //{ name: "Song", id: 2},
+			 //{ name: "Scales", id: 3}],
 	    singleNoteRanges: [{ name: "All Notes", id:0 }, 
 	    { name: "C4", id:1 }, { name: "B3-D4", id: 2 }, { name: "A3-E4", id: 3 }, { name: "G3-F4", id: 4 }
 	    ],
