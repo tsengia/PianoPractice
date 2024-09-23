@@ -91,12 +91,11 @@ html, body {
 }
 
 .keymap-window {
-	position: absolute;
-	left: 30%;
-	top: 10%;
+	position: fixed;
+	left: 40%;
+	top: 20%;
 	width: 30%;
 	background-color: #FFF;
-	border: 1px solid #DDD;
 	z-index: 2;
 	overflow-y: auto;
 	overflow-x: hidden;
@@ -108,9 +107,11 @@ html, body {
 }
 
 .keymap-window .title-bar {
-	background-color: #FDD;
+	background-color: #CCF;
+	padding-top: 2px;
 	padding-bottom: 2px;
 	border-bottom: 1px solid #333;
+	font-family: sans-serif;
 }
 
 .keymap-window .title-bar button {
