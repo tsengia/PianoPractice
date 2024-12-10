@@ -1,18 +1,33 @@
-# piano-app
+# :notes: :musical_keyboard: Piano Practice
+A small virtual piano webapp.  
 
-This template should help get you started developing with Vue 3 in Vite.
+Demo link: [https://piano-app.tsengia.net/](https://piano-app.tsengia.net/)
 
-## Recommended IDE Setup
+## Current Demos
+Below is a list of completed modes for learning to play:
+- Single Note Practice _Practice matching notes on the staff to the correct keys_ 
+- Free Play _Play any notes you want_
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Future Features
+A planned TODO list of features and modes:
+- Render time signatures
+- Metronome
+- Play Along
+- Complete Sheet Music (with varying levels of skill)
 
-## Type Support for `.vue` Imports in TS
+Please note, I have no idea when I will actually work on these.  
+Contributions are also welcome.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## Dependencies
+The Piano Practice webapp would not be possible with the great contribution of the following open source libraries and resources:
+- [MIDI.js](https://github.com/mudcube/MIDI.js)
+- [midi-js-soundfonts](https://github.com/gleitz/midi-js-soundfonts)
+- [ABCJS](https://github.com/paulrosen/abcjs)
+- [Vue3](https://github.com/vuejs/vue)
 
-## Customize configuration
+All libraries and resources noted above are redistributed in this repository with appropriate licensing files present.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+Additionally, the favicon files were generated using the wonderful [realfavicongenerator.net](https://realfavicongenerator.net/).
 
 ## Project Setup
 
