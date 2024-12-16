@@ -185,7 +185,7 @@ var app = new Vue({
 		}
 	},
 	mounted: function () {
-		// Set default keymapping. TODO: Make this load in from cookies.
+		// Set default keymapping.
 		this.keymap.setKey("D3", "q");
 		this.keymap.setKey("E3", "a");
 		this.keymap.setKey("F3", "s");

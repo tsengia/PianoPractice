@@ -153,9 +153,16 @@ class TimeSignature {
 	}
 }
 
+/**
+ * Represents a consecutive range of notes.
+ */
 class NoteRange {
-    /// Represents a consecutive range of notes.
 
+    /**
+     * Evaluate if a given note is within this range.
+     * @param {Note} note Note object to test
+     * @returns 2 if the Note is within the range (exclusive), 1 if the Note is on the ends of the range (inclusive), 0 if outside of the range.
+     */
     inRange(note) { /// Returns 0 if outside of range. Returns 1 if on end of range. Returns 2 if within range.
         if(!note instanceof Note) {
             return false;        
@@ -185,15 +192,30 @@ class NoteRange {
         
         return 2;
     }
+
+    /**
+     * Get the number of notes in this range (inclusive)
+     * @returns The number of notes in this range.
+     */
+    getNumberOfNotesInRange() {
+      var distance = 7 * (this.max.octave - this.min.octave);
+      distance += this._notesList[this.max.note] - this._notesList[this.min.note] + 1;
+      return distance;
+    }
     
+    /**
+     * @returns A random Note() object that is within this range.
+     */
     getRandomNote() {
-        var distance = 8 * (this.max.octave - this.min.octave);
-        distance += this._notesList[this.max.note] - this._notesList[this.min.note];
-        distance = Math.floor(Math.random()*distance);
-        return this.min.getNoteAtDistance(distance);
+        return this.min.getNoteAtDistance( Math.floor(Math.random()*this.getNumberOfNotesInRange()));
     }
 
-    constructor(min, max) { // min and max must both be Notes
+    /**
+     * min and max must both be Notes. 
+     * Range is INCLUSIVE on both sides.
+     * Assuming that min =< max always.
+     */ 
+    constructor(min, max) { 
         this.min = min;
         this.max = max;
         this._notesList = {"C":0, "D":1, "E":2, "F":3, "G":4, "A":5, "B":6}; // Ordered in appearance on octave

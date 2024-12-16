@@ -34,3 +34,10 @@ python -m http.server
 ```
 
 This should host the web-app on your local machine and allow you to load the sound-font and play.
+
+### Running Tests
+As mentioned before, this app does not use any testing frameworks.
+Instead, there is a [`js/tests.js`](js/tests.js) file that contains functions that are run on page load.
+Test results are displayed to console.
+
+These tests are more "unit" test oriented, and can be helpful for finding logic/mathematical errors in methods and functions.
